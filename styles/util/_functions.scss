@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@function rem($pixel) {
+  @if math.unit($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error "Property #{$pixel} must be unitless; only numbers";
+  }
+}
+
+@function em($pixel) {
+    @if math.unit($pixel) {
+      @return math.div($pixel, 16) + em;
+    } @else {
+      @error "Property #{$pixel} must be unitless; only numbers";
+    }
+  }
